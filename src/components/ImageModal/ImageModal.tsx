@@ -1,7 +1,34 @@
-import Modal from "react-modal";
-import css from "./ImageModal.module.css";
+import React from 'react';
+import Modal from 'react-modal';
+import css from './ImageModal.module.css';
+import { Photo } from '../../fetchPhotos'
+// type Photo = {
+//   alt_description: string;
+//   likes: number;
+//   urls: {
+//     regular: string;
+//   };
+//   user: {
+//     username: string;
+//     profile_image: {
+//       medium: string;
+//     };
+//   };
+// };
 
-function ImageModal({ isOpen, closeModal, modalContent }) {
+type Props = {
+  isOpen: boolean;
+  closeModal: () => void;
+  modalContent?: Photo;
+};
+
+
+
+function ImageModal({
+  isOpen,
+  closeModal,
+  modalContent,
+}: Props): React.ReactElement {
   return (
     <div>
       <Modal
@@ -10,7 +37,7 @@ function ImageModal({ isOpen, closeModal, modalContent }) {
         onRequestClose={closeModal}
         style={{
           content: {
-            padding: "0",
+            padding: '0',
           },
         }}
       >

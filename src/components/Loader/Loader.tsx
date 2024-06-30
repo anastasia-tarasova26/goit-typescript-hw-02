@@ -1,12 +1,13 @@
-import css from "./Loader.module.css";
-import { Blocks } from "react-loader-spinner";
+import React from 'react';
+import css from './Loader.module.css';
+import { Blocks } from 'react-loader-spinner';
 
-function Loader() {
+function Loader(): React.ReactElement {
   return (
     <div className={css.loaderWrapper}>
       <Blocks
-        height="80"
-        width="80"
+        height={80}
+        width={80}
         color="#17a9e3"
         ariaLabel="blocks-loading"
         wrapperStyle={{}}
@@ -15,6 +16,6 @@ function Loader() {
       />
     </div>
   );
-}
+};
 
 export default Loader;
